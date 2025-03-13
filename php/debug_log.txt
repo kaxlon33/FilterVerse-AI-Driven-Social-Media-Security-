@@ -1,0 +1,117 @@
+Offensive Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Offensive Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Offensive Output: 
+Offensive Output: 
+Offensive Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Offensive Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Offensive Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Command: D:/python_path/python.exe D:/CRP/AM_app/AM_app/offensive_detection.py "bitch"
+Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Command: D:/python_path/python.exe D:/CRP/AM_app/AM_app/offensive_detection.py fuck
+Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
+Command: D:/python_path/python.exe D:/CRP/AM_app/AM_app/offensive_detection.py fuck
+Output: [nltk_data] Downloading package stopwords to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to
+[nltk_data]     C:\Users\User\AppData\Roaming\nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+Traceback (most recent call last):
+  File "D:\CRP\AM_app\AM_app\offensive_detection.py", line 13, in <module>
+    model = joblib.load('offensive_language_model.pkl')
+  File "D:\python_path\Lib\site-packages\joblib\numpy_pickle.py", line 650, in load
+    with open(filename, 'rb') as f:
+         ~~~~^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'offensive_language_model.pkl'
+
