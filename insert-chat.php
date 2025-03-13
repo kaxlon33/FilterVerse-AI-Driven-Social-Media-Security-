@@ -88,7 +88,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
     }
 
     $image_new_name = uniqid('IMG_', true) . "." . $image_extension;
-    $imagePath = "images/" . $image_new_name;
+    $imagePath = "php/images/" . $image_new_name;
 
     if (move_uploaded_file($image_tmp_name, $imagePath)) {
         $image_absolute_path = str_replace("\\", "/", realpath($imagePath));

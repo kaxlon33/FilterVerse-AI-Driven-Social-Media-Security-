@@ -49,24 +49,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (isset($_POST['share'])) {
-        // Handle "share" action
-        $sql = "SELECT content, media_url FROM posts WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $post_id);
-        $stmt->execute();
-        $stmt->bind_result($content, $media_url);
-        $stmt->fetch();
-        $stmt->close();
-
-        // Insert duplicate post with new timestamp
-        $insert_sql = "INSERT INTO posts (user_id, content, media_url, created_at) 
-                       VALUES (?, ?, ?, NOW())";
-        $insert_stmt = $conn->prepare($insert_sql);
-        $insert_stmt->bind_param("iss", $unique_id, $content, $media_url);
-
-        if ($insert_stmt->execute()) {
-            header("Location: homeee.php"); // Redirect to refresh posts
-            exit;
+        $post_id = $_POST['post_id']; // Ensure post_id is received
+        $unique_id = $_SESSION['unique_id']; // Ensure user_id is set
+    
+        // Insert a record into post_shares (track share action)
+        $share_sql = "INSERT INTO post_shares (post_id, user_id, created_at) VALUES (?, ?, NOW())";
+        $share_stmt = $conn->prepare($share_sql);
+        $share_stmt->bind_param("ii", $post_id, $unique_id);
+        
+        if ($share_stmt->execute()) {
+            // Fetch the original post content and media
+            $sql = "SELECT content, media_url FROM posts WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $post_id);
+            $stmt->execute();
+            $stmt->bind_result($content, $media_url);
+            $stmt->fetch();
+            $stmt->close();
+    
+            // Insert duplicate post with a new timestamp
+            $insert_sql = "INSERT INTO posts (user_id, content, media_url, created_at) 
+                           VALUES (?, ?, ?, NOW())";
+            $insert_stmt = $conn->prepare($insert_sql);
+            $insert_stmt->bind_param("iss", $unique_id, $content, $media_url);
+            
+            if ($insert_stmt->execute()) {
+                header("Location: homeee.php"); // Redirect to refresh posts
+                exit;
+            }
         }
     }
+    
+    
+
+    
 }

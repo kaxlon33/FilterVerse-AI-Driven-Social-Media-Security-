@@ -30,7 +30,7 @@ while($row = mysqli_fetch_assoc($query)){
         $output .= '
         <a href="chat.php?user_id='. $row['unique_id'] .'" style="display: flex; align-items: center; padding: 10px; text-decoration: none; color: inherit; border-bottom: 1px solid #dddfe2; transition: background-color 0.3s ease;">
             <div class="content" style="display: flex; align-items: center; flex-grow: 1;">
-                <img src="php/images/'. $row['img'] .'" alt="" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                <img src="php/images/'. $row['img'] .'" alt="" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; object-fit: cover;">
                 <div class="details" style="flex-grow: 1;">
                     <span style="display: block; font-size: 16px; font-weight: bold; color: #1c1e21;">'. $row['fname']. " " . $row['lname'] .'</span>
                     <p style="margin: 0; font-size: 14px; color: #65676b; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 250px;">

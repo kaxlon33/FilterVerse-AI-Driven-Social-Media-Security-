@@ -16,9 +16,9 @@ if (!isset($_POST['target_user_id']) || empty($_POST['target_user_id'])) {
 $blocker_id = $_SESSION['unique_id'];  // Blocker user ID from session (which is unique_id)
 $target_user_id = mysqli_real_escape_string($conn, $_POST['target_user_id']);  // Sanitize the target user ID
 
-// Debugging: Print Blocker and Target IDs to check if they are valid
-echo "Blocker ID (Unique ID): " . $blocker_id . "<br>";
-echo "Target User ID (Unique ID): " . $target_user_id . "<br>";
+// // Debugging: Print Blocker and Target IDs to check if they are valid
+// echo "Blocker ID (Unique ID): " . $blocker_id . "<br>";
+// echo "Target User ID (Unique ID): " . $target_user_id . "<br>";
 
 // Ensure no leading/trailing spaces in IDs
 $blocker_id = trim($blocker_id);
@@ -31,22 +31,22 @@ $stmt->execute();
 $result1 = $stmt->get_result();
 
 // Debug: Check results of Blocker query
-if ($result1->num_rows == 0) {
-    echo "Blocker user not found.<br>";
-} else {
-    echo "Blocker user found.<br>";
-}
+// if ($result1->num_rows == 0) {
+//     echo "Blocker user not found.";
+// } else {
+//     echo "Blocker user found.";
+// }
 
 $stmt->bind_param("i", $target_user_id);
 $stmt->execute();
 $result2 = $stmt->get_result();
 
-// Debug: Check results of Target query
-if ($result2->num_rows == 0) {
-    echo "Target user not found.<br>";
-} else {
-    echo "Target user found.<br>";
-}
+// // Debug: Check results of Target query
+// if ($result2->num_rows == 0) {
+//     echo "Target user not found.<br>";
+// } else {
+//     echo "Target user found.<br>";
+// }
 
 if ($result1->num_rows == 0 || $result2->num_rows == 0) {
     echo "Error: One or both users do not exist.";

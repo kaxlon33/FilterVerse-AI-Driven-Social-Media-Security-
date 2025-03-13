@@ -9,7 +9,7 @@ if (!isset($_SESSION['unique_id'])) {
 
 <body style="font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0;">
   <div class="wrapper" style="max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-    <section class="chat-area" style="display: flex; flex-direction: column; height: 75vh;">
+    <section class="chat-area" style="display: flex; flex-direction: column; height: 90vh; padding-top: 10px;">
       <header style="display: flex; align-items: center; padding: 20px; border-bottom: 1px solid #e4e6eb;">
         <?php
         $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
@@ -36,7 +36,6 @@ if (!isset($_SESSION['unique_id'])) {
         <?php else: ?>
           <button id="blockBtn" style="background-color: #dc3545; color: #fff; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;" onclick="toggleBlock(<?php echo $target_user_id; ?>)">Block User</button>
         <?php endif; ?>
-
       </header>
       <div class="chat-box" style="flex-grow: 1; overflow-y: auto; padding: 20px; background-color: #f0f2f5;">
         <!-- Chat messages will be loaded here -->
@@ -64,15 +63,8 @@ if (!isset($_SESSION['unique_id'])) {
   <script src="javascript/chat.js"></script>
   <script src="javascript/block.js"></script>
 
-
   <div id="banMessage" style="display:none; text-align:center; font-size:20px; color:red;">
     <p>You are banned from using the chat.</p>
   </div>
-
-
-
-
-
 </body>
-
 </html>
