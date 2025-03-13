@@ -16,12 +16,12 @@ $userQuery = mysqli_query($conn, "SELECT offense_count, is_banned, email FROM us
 $userData = mysqli_fetch_assoc($userQuery);
 
 if ($userData['is_banned']) {
-    echo "<script>
-                showCustomAlert('🚫 You are Banned for 3 days!', 'Redirecting to login page...', 'black');
+    echo "
+                🚫 You are Banned for 3 days!
                 setTimeout(function() {
                     window.location.href = 'login.php';
                 }, 3000);
-            </script>";
+            ";
     exit();
 }
 
@@ -37,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $offense_count++;
 
         if ($offense_count == 1) {
-            echo "<script>
-            showCustomAlert('⚠️ Warning!', 'Please do not use offensive words.', 'orange');
-        </script>";
+            echo "
+            ⚠️ Please do not use offensive words.
+        ";
         } elseif ($offense_count == 2) {
-            echo "<script>
-            showCustomAlert('⚠️ Final Warning!', 'This is your second warning. If you do it again, you will be banned.', 'red');
-        </script>";
+            echo "
+            ⚠️⚠️⚠️ This is your second warning. If you do it again, you will be banned
+        ";
         } elseif ($offense_count >= 3) {
             // Ban the user and set ban time
             $ban_time = date('Y-m-d H:i:s', strtotime('+3 days'));
@@ -59,12 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Destroy session and display ban message
             session_destroy();
-            echo "<script>
-                showCustomAlert('🚫 You are Banned for 3 days!', 'Redirecting to login page...', 'black');
+            echo "
+                🚫 You are Banned for 3 days!
                 setTimeout(function() {
                     window.location.href = 'login.php';
                 }, 3000);
-            </script>";
+            ";
             exit();
         }
 
@@ -101,9 +101,14 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
             $offense_count++;
 
             if ($offense_count == 1) {
-                echo "Warning: Please do not upload inappropriate images.";
+
+                echo "
+                ⚠️ Please do not upload inappropriate images.
+            ";
             } elseif ($offense_count == 2) {
-                echo "This is your second warning. If you do it again, you will be banned.";
+                echo "
+                ⚠️⚠️⚠️ This is your second warning. If you do it again, you will be banned
+            ";
             } elseif ($offense_count >= 3) {
                 // Ban the user and set ban time
                 $ban_time = date('Y-m-d H:i:s', strtotime('+3 days'));
@@ -119,12 +124,12 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
 
                 // Destroy session and display ban message
                 session_destroy();
-                echo "<script>
-                showCustomAlert('🚫 You are Banned for 3 days!', 'Redirecting to login page...', 'black');
+                echo "
+                🚫 You are Banned for 3 days!.
                 setTimeout(function() {
                     window.location.href = 'login.php';
                 }, 3000);
-            </script>";
+            ";
                 exit();
             }
 
