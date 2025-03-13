@@ -61,9 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_destroy();
             echo "
                 🚫 You are Banned for 3 days!
-                setTimeout(function() {
-                    window.location.href = 'login.php';
-                }, 3000);
             ";
             exit();
         }
@@ -126,9 +123,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
                 session_destroy();
                 echo "
                 🚫 You are Banned for 3 days!.
-                setTimeout(function() {
-                    window.location.href = 'login.php';
-                }, 3000);
+              
             ";
                 exit();
             }
