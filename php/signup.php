@@ -72,152 +72,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SocialConnect - Register</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1877f2;
-            --secondary-color: #42b72a;
-            --background-color: #f0f2f5;
-            --card-background: #ffffff;
-            --text-color: #1c1e21;
-            --text-muted: #65676b;
-            --border-color: #dddfe2;
-            --hover-bg: #f2f2f2;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            background-color: var(--card-background);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .form-group input[type="file"] {
-            padding: 5px;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #166fe5;
-        }
-
-        .error-txt {
-            color: #721c24;
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .success-txt {
-            color: #155724;
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/signup.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="logo">SocialConnect</div>
-        <?php
-        if (isset($error)) {
-            echo '<div class="error-txt">' . $error . '</div>';
-        }
-        if (isset($success)) {
-            echo '<div class="success-txt">' . $success . '</div>';
-        }
-        ?>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" name="fname" id="fname" required>
-            </div>
-            <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" name="lname" id="lname" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            <div class="form-group">
-                <label for="image">Profile Picture</label>
-                <input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn">Sign Up</button>
-            </div>
+        <div class="card">
+            <h1 class="logo">Social<span style="font-weight: bold;">Connect</span>
+            </h1>
 
-            <div class="link" style="text-align: center; margin-top: 20px; font-size: 14px; color: #65676b;">
-                Already have an account? <a href="../login.php" style="color: #1877f2; text-decoration: none; font-weight: bold;">Login Now</a>
-            </div>
-        </form>
+            <?php if (isset($error)): ?>
+                <div class="error-txt"><?php echo $error; ?></div>
+            <?php endif; ?>
+
+            <?php if (isset($success)): ?>
+                <div class="success-txt"><?php echo $success; ?></div>
+            <?php endif; ?>
+
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname" placeholder="Enter your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group password-field">
+                    <label for="password">Password</label>
+                    <div class="password-container">
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                        <i class="toggle-password fas fa-eye"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Profile Picture</label>
+                    <input type="file" name="image" id="image" class="file-input" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
+                    <label for="image" class="file-label">Choose a file</label>
+                    <span class="file-name">No file chosen</span>
+                </div>
+
+                <button type="submit" class="btn">Sign Up</button>
+
+                <div class="link">
+                    Already have an account? <a href="../login.php">Login Now</a>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <script>
+        // Toggle password visibility
+        document.querySelector('.toggle-password').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+
+        // Display file name when selected
+        document.getElementById('image').addEventListener('change', function() {
+            const fileName = this.files[0] ? this.files[0].name : 'No file chosen';
+            document.querySelector('.file-name').textContent = fileName;
+        });
+    </script>
 </body>
 
 </html>
